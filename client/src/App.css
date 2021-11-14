@@ -1,0 +1,11 @@
+.app-wrap{
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .app-wrap{
+    width: 100%;
+    margin: auto;
+  }
+}
