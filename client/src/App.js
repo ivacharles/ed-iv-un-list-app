@@ -1,28 +1,50 @@
 import React from 'react';
 import { 
-  BrowserRouter as Router, 
+  BrowserRouter as
+  Router,
+  Route,
   Switch, 
-  Route, 
   Link,
   NavLink
 } from 'react-router-dom';
 import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
+// import Footer from '';
 
-import HomePage from './pages/HomePage';
+import {Footer, HomePage, Menu, SubMenu} from './pages/HomePage';
 import './App.css';
+import PersonalSafetyTips from './pages/PersonalSafetyTips';
 
 class App extends React.Component {
   render() {
     return (
         <Router>
-              <Switch>
-                <Route path="/posts/new" component={PostFormPage} />
-                <Route path="/posts/:id" component={ShowPostPage} />
-                <Route path="/about-us" component={AboutUsPage} />
-                <Route path="/" component={HomePage} />
-              </Switch>
+          <Menu />
+          <SubMenu />
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route path="/posts/new">
+              <PostFormPage />
+            </Route>
+            <Route path="/posts/">
+              <ShowPostPage />
+            </Route>
+            <Route path="/About">
+              <AboutUsPage />
+            </Route>
+            <Route path="/PersonalSafety">
+              <PersonalSafetyTips />
+            </Route>
+            {/* Format : 
+              <Route path="/PlaceItLinksTo">
+                <React Function />
+              </Route>
+            */}
+          </ Switch>
+          <Footer />
         </Router>
     );
   }
