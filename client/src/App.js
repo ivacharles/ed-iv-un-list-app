@@ -17,16 +17,12 @@ class App extends React.Component {
   render() {
     return (
         <Router>
-          <div className="app-wrap">
-            <div className="row justify-content-center">
               <Switch>
                 <Route path="/posts/new" component={PostFormPage} />
                 <Route path="/posts/:id" component={ShowPostPage} />
                 <Route path="/about-us" component={AboutUsPage} />
                 <Route path="/" component={HomePage} />
               </Switch>
-            </div>
-          </div>
         </Router>
     );
   }
