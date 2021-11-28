@@ -42,7 +42,7 @@ function Menu() {
                 <a className="nav-link text-nowrap text-white" href="/posts/new">create a post</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-nowrap text-white" href="#" >account</a>
+                <a className="nav-link text-nowrap text-white" href="/account" >account</a>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
