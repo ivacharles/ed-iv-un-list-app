@@ -10,6 +10,7 @@ import {
 import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
+import Account from './pages/Account';
 // import Footer from '';
 
 import {Footer, HomePage, Menu, SubMenu} from './pages/HomePage';
@@ -37,6 +38,9 @@ class App extends React.Component {
             </Route>
             <Route path="/PersonalSafety">
               <PersonalSafetyTips />
+            </Route>
+            <Route path="/account">
+              <Account />
             </Route>
             {/* Format : 
               <Route path="/PlaceItLinksTo">
