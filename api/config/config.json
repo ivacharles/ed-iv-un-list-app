@@ -1,25 +1,23 @@
 {
   "development": {
-    "username": "ctp_user",
-    "password": "ctp_pass",
-    "database": "ed_iv_un_db_dev",
+    "username": "root",
+    "password": null,
+    "database": "database_development",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "test": {
-    "username": "ctp_user",
-    "password": "ctp_pass",
-    "database": "app2021_test",
+    "username": "root",
+    "password": null,
+    "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "ssl": {
-        "rejectUnauthorized": false
-      }
-    }
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }

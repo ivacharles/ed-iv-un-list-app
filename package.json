@@ -16,11 +16,11 @@
     "morgan": "^1.10.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.7.0"
+    "sequelize": "^6.11.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.15"
   },
   "nodemonConfig": {
     "ignore": [
