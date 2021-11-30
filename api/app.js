@@ -20,7 +20,7 @@ const app = express();
 
 app.get('/', (req,res) => res.send('INDEX'));
 app.use( '/jobs', require('./routes/jobs'));
-
+app.use( '/user', require('./routes/user'));
 const PORT = process.env.PORT || 5000 ;
 
 // this lets us parse 'application/json' content in http requests
