@@ -5,7 +5,8 @@ const bodyParse = require('body-parser');
 const path = require('path');
 
 const db = require('./config/database');
-
+const jobs = require('./models/jobs');
+const user = require('./models/user');
 // handlebars
 // app.engine('handlebars',exphbs({defaultlayout:'main' }));
 // app.engine('view engine', 'handlebars');
@@ -17,10 +18,33 @@ db.authenticate()
 // const morgan = require('morgan');
 const app = express();
 // jobs routes
-
-app.get('/', (req,res) => res.send('INDEX'));
 app.use( '/jobs', require('./routes/jobs'));
 app.use( '/user', require('./routes/user'));
+
+// app.get('/', (req,res) => res.send('INDEX'));
+// app.get('/', (req, res) => {
+//  jobs.findAll().then(jobs => res.send(jobs));
+
+// });
+
+// app.get('/', (req, res) => {
+
+//   user.findAll().then(user => res.send(user));
+//  });
+
+ app.get('/', (req, res) => {
+  try{
+    user.findAll().then(user => res.send(user));
+  
+  }
+  catch{
+    console.log("sorry database dont exist");
+  }
+
+
+ });
+
+
 const PORT = process.env.PORT || 5000 ;
 
 // this lets us parse 'application/json' content in http requests

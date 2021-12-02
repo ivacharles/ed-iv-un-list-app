@@ -4,6 +4,7 @@ const Sequelize = require('sequelize');
   host: 'localhost',
   dialect: 'postgres',
   operatorsAliases: false,
+  logging:false,
 
   pool: {
     max: 5,

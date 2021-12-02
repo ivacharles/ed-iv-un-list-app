@@ -4,13 +4,15 @@ const Sequelize= require('sequelize');
 const database = require("../config/database");
 
 const user = database.define('user',{
-user_name:{   
+    userid:{
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    user_name:{   
     type: Sequelize.STRING
 },
 first_name:{
-    type: Sequelize.STRING
-},
-contact_email:{
     type: Sequelize.STRING
 },
 last_name:{
@@ -23,6 +25,6 @@ gender:{
     type: Sequelize.STRING
 }
 })
-user.sync({force: true});
+user.sync({alter : true});
 module.exports = user;
 
