@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/**
+* Author : Iva Lesperance Charles
+* Date : 12-01-2021
+* file name : listing-card.css
+**/
+p{
+  color:"#73777A";
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content > div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* Ad Layout  */
+.ad {
+  width: 90%;
+  height: 220px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  border: .5px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px 1px #aaaaaa;
+}
+.ad > div {
+  margin-right: 25px;
+}
+
+/* Ad text */
+.texty > h2 {
+  color: orange;
+}
+.texty a {
+  text-decoration: none;
+  color: #73777A;
+}
+.texty a:hover{
+  text-decoration: underline;
+}
+
+.lajan {
+  font-size: 1.4em;
+  color: black;
+}
+.texty > p{
+  display: inline-block;
+  color: #2075B9;
+}
+
+/* Ad pict */
+.picc{
+
+  width: 180px;
+  height: 180px;
+}
+
+.picc img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .picc {
+    width: 100%;
+    height: 100%;
+  }
+  .texty > p{
+    color: aqua;
+    display: none;
+}
+  
+}
