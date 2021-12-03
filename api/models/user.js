@@ -9,22 +9,35 @@ const user = database.define('user',{
         autoIncrement: true,
         primaryKey: true
     },
-    user_name:{   
-    type: Sequelize.STRING
-},
+
 first_name:{
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    allowNull:false
 },
 last_name:{
     type: Sequelize.STRING
 },
-password:{
+email:{
     type: Sequelize.STRING
 },
-gender:{
-    type: Sequelize.STRING
+password:{
+    type: Sequelize.STRING,
+    allowNull:false
+},
+zip:{
+    type: Sequelize.INTEGER,
+    allowNull:false
+},
+city:{
+    type: Sequelize.STRING,
+    allowNull:false
 }
 })
-user.sync({alter : true});
+// user.hasMany(post, {
+//     as: 'post',
+//     foreignKey: 'userid',
+//     sourceKey: 'userid'
+// });
+user.sync();
 module.exports = user;
 

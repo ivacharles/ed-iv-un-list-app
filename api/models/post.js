@@ -3,6 +3,7 @@ const Sequelize= require('sequelize');
 const database = require("../config/database");
 const user = require('./user');
 const category = require('./category');
+
 const post = database.define('post',{
 id:{
     type: Sequelize.INTEGER,
@@ -11,7 +12,7 @@ id:{
 },
 userid:{
     type: Sequelize.INTEGER,
-    refrences: 'user',
+    references: 'user',
     referencesKey: 'userid'
 },
 title:{
@@ -26,14 +27,14 @@ img:{
 zipcode:{
   type: Sequelize.INTEGER
 },
-category:{
+category:{           
   type: Sequelize.STRING,
   references: 'category',
-  referencesKey: 'id'
+  referencesKey: 'category'
 },
 price:{
-  type: Sequelize.STRING
-},
+  type: Sequelize.DOUBLE
+},                            
 make:{
   type: Sequelize.STRING
 }
@@ -47,7 +48,17 @@ description:{
     type: Sequelize.STRING
 }
 })
+
+post.belongsTo(user, {
+  foreignKey: 'userid',
+  targetKey: 'userid'
+});
+
+// post.belongsTo(category, {
+//   foreignKey: '',
+//   targetKey: 'userid'
+// });
 user.hasMany(post);
-post.hasMany();
+category.hasMany(post);
 post.sync({alter:true});
 module.exports = post;

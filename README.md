@@ -43,6 +43,11 @@ For local development you will need two terminals open, one for the api-backend 
 # api-backend terminal 1
 cp .env.example .env
 npm install
+npm install --save pg pg-hshore
+npm install --save sequelize     
+npm install --save body-parser  
+npm install --save express-handlebars
+
 npm run dev
 ```
 
