@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "craig-user",
+    "password": "edivun",
+    "database": "craiglist_database",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "craig-user",
+    "password": "edivun",
+    "database": "craiglist_database",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}
