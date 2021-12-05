@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
   class Post extends Model {}
 
   Post.init({
-<<<<<<< HEAD
 
     id:{
       type: DataTypes.INTEGER,
@@ -59,15 +58,11 @@ module.exports = (sequelize, DataTypes) => {
     type: DataTypes.STRING
   },
   contact_email:{
-=======
-    content: {
->>>>>>> 8771af42d3193f9180fc3b8096dde86e5dabd066
       type: DataTypes.STRING,
       validate: {
         len: [3, 250],
         notEmpty: true,
       }
-<<<<<<< HEAD
   },
   description:{
       type: DataTypes.STRING,
@@ -77,9 +72,6 @@ module.exports = (sequelize, DataTypes) => {
       }
   },
 
-=======
-    },
->>>>>>> 8771af42d3193f9180fc3b8096dde86e5dabd066
   }, {
     sequelize,
     modelName: 'post'
@@ -87,14 +79,11 @@ module.exports = (sequelize, DataTypes) => {
 
   Post.associate = (models) => {
     // associations can be defined here
-<<<<<<< HEAD
     // Post.belongsTo(models.user,{
     //   foreignKey:{
     //     name: 'userid'
     //   }
     // });
-=======
->>>>>>> 8771af42d3193f9180fc3b8096dde86e5dabd066
   };
 
   return Post;

@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 8771af42d3193f9180fc3b8096dde86e5dabd066
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
