@@ -4,7 +4,11 @@
   "description": "An api backend",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node server/server.js",
+=======
+    "start": "node api/app.js",
+>>>>>>> 8771af42d3193f9180fc3b8096dde86e5dabd066
     "dev": "nodemon -r dotenv/config api/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm install && npm run build"
@@ -12,6 +16,7 @@
   "author": "Edwin Samaniego, Iva Lesperance Charles, Unaiza Nizami",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^6.0.1",
@@ -23,6 +28,17 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.15"
+=======
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.7.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.14"
+>>>>>>> 8771af42d3193f9180fc3b8096dde86e5dabd066
   },
   "nodemonConfig": {
     "ignore": [

@@ -52,6 +52,7 @@ cd client
 npm install
 npm start
 ```
+<<<<<<< HEAD
  // IMPORTANT 
  if you comment out the js files under the model it would give you an error ".require not found"
  change it to .js.bak to make it working becuase the index.js thinks it have to read all the files.
@@ -64,6 +65,12 @@ npm start
 cd api
 npx sequelize-cli db:seed:all
 
+=======
+
+- api-backend will launch at: http://localhost:8080
+- react-client will launch at: http://localhost:3000
+
+>>>>>>> 8771af42d3193f9180fc3b8096dde86e5dabd066
 ## Project Structure
 
 <pre>
