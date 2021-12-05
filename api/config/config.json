@@ -1,15 +1,15 @@
 {
   "development": {
-    "username": "ctp_user",
-    "password": "ctp_pass",
-    "database": "ed_iv_un_db_dev",
+    "username": "craig-user",
+    "password": "edivun",
+    "database": "craiglist_database",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "ctp_user",
-    "password": "ctp_pass",
-    "database": "app2021_test",
+    "username": "craig-user",
+    "password": "edivun",
+    "database": "craiglist_database",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
