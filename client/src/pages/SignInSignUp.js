@@ -12,7 +12,7 @@ function SingInSignUp(props) {
 function SignUp(){
     return(
         <div className="p-5 row justify-content-center ">
-            <div className="col-4 p-5 ">
+            <div className="col-xs-4 col-sm-12 col-lg-4 col-md-8 p-5 ">
             <form>
                 <h1 class="h3 mb-0 fw-normal"> Sign in</h1>
             <button class="w-100 btn btn-lg btn-dark my-3" type="submit"><BsGoogle /> Sign in with Google </button>
@@ -38,7 +38,7 @@ function SignUp(){
 
             <div className="vr color-dark"></div>
 
-            <div className="col-4 p-5">
+            <div className="col-xs-4 col-sm-12 col-lg-4 col-md-8 p-5 ">
             <form>
                 <h1 class="h3 mb-3 fw-normal">Create account</h1>
 
