@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = require('express').Router(); 
 const db = require('../config/database');
@@ -9,17 +8,17 @@ user.findAll()
 .then(user => {
     console.log (user);
     res.sendStatus(200);
-   })
-      .catch(err => console.log(err)));
+})
+.catch(err => console.log(err)));
 // add a job
 router.get('/add', (req,res)=>{
     const data = {
-        first_name: 'una',
-        last_name: 'Nami',
-        contact_email: 'user3@gmail.com',
-        password: 'passWord@1',
-        zip: 1090,
-        city: 'statenisland'
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        contact_email: req.body.contact_email,
+        passwordHash: req.body.password,
+        zip: req.body.zip,
+        city: req.body.city
     }
     let {first_name,last_name,contact_email,password,zip,city}  = data;
     user.create({
