@@ -23,9 +23,9 @@ Category.findAll({})
 
 
 router.post('/', (req, res) => {
-  let { content } = req.body;
+  let {  category} = req.body;
   
-  Category.create({ content })
+  Category.create({  category })
     .then(category => {
       res.status(201).json(category);
     })
@@ -56,7 +56,7 @@ router.put('/:id', (req, res) => {
         return res.sendStatus(404);
       }
 
-      category .content = req.body.content;
+      category . category = req.body. category;
       category .save()
         .then(category  => {
           res.json(category );
