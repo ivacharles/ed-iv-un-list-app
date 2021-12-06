@@ -22,9 +22,9 @@ router.get('/', (req,res) => {
 
 
 router.post('/', (req, res) => {
-  let { content } = req.body;
+  let { first_name,last_name,email,password,zip,city } = req.body;
   
-  User.create({ content })
+  User.create({ first_name,last_name,email,password,zip,city })
     .then(user => {
       res.status(201).json(user);
     })
@@ -54,8 +54,13 @@ router.put('/:id', (req, res) => {
       if(!user) {
         return res.sendStatus(404);
       }
-
-      user.content = req.body.content;
+      first_name,last_name,email,password,zip,city   
+      user.first_name = req.body.first_name;
+      user.last_name = req.body.last_name;
+      user.email = req.body.email;
+      user.password = req.body.password;
+      user.zip = req.body.zip;
+      user.city = req.body.city;
       user.save()
         .then(user => {
           res.json(user);
