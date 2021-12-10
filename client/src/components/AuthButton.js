@@ -5,15 +5,14 @@ import { AuthContext } from '../context/AuthContext';
 const AuthButton = withRouter(({ history }) => {
   const auth = useContext(AuthContext);
   if(!auth.isAuthenticated) {
-    return <Link className="btn btn-primary" to="/login">Login</Link>;
+    return <Link className="nav-link text-nowrap text-white" to="/login">log in</Link>;
   }
   const logout = () => {
     auth.signout().then(() => history.push('/'));
   }
   return (
     <div className="text-white">
-      Welcome! {auth.user.first_name}
-      <button className="btn btn-primary" onClick={logout}>Logout</button>
+      <Link className="nav-link text-nowrap text-white" onClick={logout}>log out</Link>
     </div>
   );
 });

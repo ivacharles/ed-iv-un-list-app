@@ -1,12 +1,10 @@
 import React, { useState, useEffect, createContext } from 'react'
-
 const AuthContext = createContext();
 const { Provider } = AuthContext;
 
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(false);
-
   useEffect(() => {
     fetch('/api/auth/login')
     .then(response => {
@@ -16,27 +14,6 @@ const AuthProvider = ({ children }) => {
     .then(body => setUser(body))
     .catch(err => setUser(false))
   } , [])
-
-  // const authenticate = ( first_name, last_name, contact_email, password, zip, city ) => {
-  //   return fetch('/api/auth/signup', {
-  //     method: 'POST',
-  //     body: JSON.stringify({first_name, last_name, contact_email, password, zip, city }),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     }
-  //   })
-  //   .then((response) => {
-  //     console.log("asdasdasds" + response)
-  //     if(!response.created) {
-  //       throw new Error('Sign Up Failed');
-  //     }
-  //     return response.json();
-  //   })
-  //   .then((body) => {
-  //     setUser(body);
-  //     return body;
-  //   });
-  // }
 
   const authenticate = (contact_email, password) => {
     return fetch('/api/auth/login', {
@@ -50,6 +27,27 @@ const AuthProvider = ({ children }) => {
       if(!response.ok) {
         throw new Error('Login Failed');
       }
+      return response.json();
+    })
+    .then((body) => {
+      setUser(body);
+      return body;
+    });
+  }
+
+  const signup = (firstName, lastName, contact_email, password, zip, city) => {
+    return fetch('/api/auth/signup', {
+      method: 'POST',
+      body: JSON.stringify({firstName, lastName, contact_email, password, zip, city}),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+    .then((response) => {
+      if(!response.ok) {
+        throw new Error('Sign Up Failed');
+      }
+      console.log("\n\n\n\n\n\n\n\n\n " + response)
       return response.json();
     })
     .then((body) => {
@@ -78,6 +76,7 @@ const AuthProvider = ({ children }) => {
   return (
     <Provider
       value={{
+        signup,
         authenticate,
         signout,
         user,

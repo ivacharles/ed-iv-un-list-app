@@ -119,7 +119,7 @@ function TodaysDealSection() {
 
 function Footer() {
   return (
-    <div className="container-fluid  bg-dark" >
+    <div className="container-fluid  bg-dark footerClass" >
       <footer className="  py-0">
       <nav className="  py-0">
         <ul className="nav nav-pills d-flex justify-content-center">

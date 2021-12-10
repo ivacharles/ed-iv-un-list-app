@@ -52,9 +52,6 @@ class App extends React.Component {
             </Route>
             <Route path="/login" component={ SingInSignUp } />
             <Route path="/dashboard" component={ UserDashboard }/>
-            <Route path="/dashboard">
-              <UserDashboard />
-            </Route>
             <Route path="/create-listing">
               <ListingForm />
             </Route>

@@ -16,11 +16,11 @@ class SignUp extends React.Component {
     state = {
       redirectToReferrer: false,
       failed: false,
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       contact_email: "",
       password: "",
-      zip: "",
+      zip: 0,
       city: ""
     }
   
@@ -47,8 +47,8 @@ class SignUp extends React.Component {
     signup = (e) => {
       e.preventDefault();
       const auth = this.context;
-      let { first_name, last_name, contact_email, password, zip, city } = this.state;
-      auth.signup( first_name, last_name, contact_email, password, zip, city )
+      let { firstName, lastName, contact_email, password, zip, city } = this.state;
+      auth.signup( firstName, lastName, contact_email, password, zip, city )
       .then((user) => {
         this.setState({ redirectToReferrer: true });
       })
@@ -121,8 +121,8 @@ class SignUp extends React.Component {
                                     type="text"
                                     class="form-control p-3 mb-4"
                                     placeholder="First name"
-                                    value={this.state.first_name}
-                                    onChange={this.fieldChanged('first_name')}
+                                    value={this.state.firstName}
+                                    onChange={this.fieldChanged('firstName')}
                                 />
                             </div>
                             <div class="col ">
@@ -131,8 +131,8 @@ class SignUp extends React.Component {
                                     type="text"
                                     class="form-control p-3"
                                     placeholder="Last name"
-                                    value={this.state.last_name}
-                                    onChange={this.fieldChanged('last_name')}
+                                    value={this.state.lastName}
+                                    onChange={this.fieldChanged('lastName')}
                                 />
                             </div>
                     </div>
@@ -161,7 +161,7 @@ class SignUp extends React.Component {
                             <div class="col ">
                                 <input
                                     name="zip"
-                                    type="text"
+                                    type="number"
                                     class="form-control p-3"
                                     placeholder="Zip"
                                     value={this.state.zip}
