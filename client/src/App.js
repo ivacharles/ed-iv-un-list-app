@@ -15,6 +15,7 @@ import SingInSignUp from './pages/SignInSignUp';
 import UserDashboard from './pages/UserDashboard';
 import ListingForm from './components/ListingForm';
 import ListingCard from './components/ListingCard';
+
 // import Footer from '';
 
 import {Footer, HomePage, Menu, SubMenu} from './pages/HomePage';
@@ -58,7 +59,6 @@ class App extends React.Component {
             <Route path="/posting-card">
               <ListingCard />
             </Route>
-
             {/* Format : 
               <Route path="/PlaceItLinksTo">
                 <React Function />
