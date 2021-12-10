@@ -24,7 +24,6 @@ router.get('/', (req,res) => {
 
 router.post('/', (req, res) => {
   let { userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description } = req.body;
-  
   Post.create({ userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description })
     .then(post => {
       res.status(201).json(post);

@@ -4,6 +4,7 @@ import MainSection from '../components/MainSection';
 import SingleDropdownComponent from '../components/SingleDropdownComponent';
 import imgPlaceholder from '../images/looking_4_jobs.jpg'
 import '../App.css';
+import AuthButton from '../components/AuthButton';
 
 function HomePage(props) {
   return (
@@ -42,7 +43,8 @@ function Menu() {
                 <a className="nav-link text-nowrap text-white" href="/create-listing">create a post</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-nowrap text-white" href="/login" >account</a>
+                <AuthButton />
+                {/* <a className="nav-link text-nowrap text-white" href="/login" >account</a> */}
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

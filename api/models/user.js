@@ -1,6 +1,6 @@
 'use strict';
-const { Model } = require('sequelize');
 const bcrypt = require('bcryptjs');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
 class User extends Model {}
    User.init({
@@ -25,18 +25,20 @@ class User extends Model {}
             isEmail: true,
         },
     },
-    password:{ type: DataTypes.STRING},
-    // passwordHash:{
-    //     type: DataTypes.VIRTUAL,
-    //     allowNull: false,
-    //     validate: {
-    //         isLongEnough: (val) => {
-    //             if(val.length < 7){
-    //                 throw new Error("Please choose a longer password.");
-    //             }
-    //         }
-    //     }
-    // },
+    password:{
+         type: DataTypes.STRING,
+    },
+    passwordHash:{
+        type: DataTypes.VIRTUAL,
+        allowNull: false,
+        validate: {
+            isLongEnough: (val) => {
+                if(val.length < 7){
+                    throw new Error("Please choose a longer password.");
+                }
+            }
+        }
+    },
     zip:{
         type: DataTypes.INTEGER,
         validate: {
@@ -47,25 +49,24 @@ class User extends Model {}
                 }
             }
         },
-        allowNull:false
+        allowNull: false,
     },
     city:{
         type: DataTypes.STRING,
-        allowNull:false
+        allowNull: false,
     },
-  
     }, {
       sequelize,
       modelName: 'user'
     })
-//    User.associate = (models) => {
-//       // associations can be defined here
-//     //   User.hasMany(models.post,{foreignKey : 'userid'});
-//     };
-    // User.beforeSave((user, options) =>{
-    //     if(user.passwordHash){
-    //         user.password = bcrypt.hashSync(user.passwordHash, 10);
-    //     }
-    // });
+   User.associate = (models) => {
+      // associations can be defined here
+    //   User.hasMany(models.post,{foreignKey : 'userid'});
+    };
+    User.beforeSave((user, options) =>{
+        if(user.passwordHash){
+            user.password = bcrypt.hashSync(user.passwordHash, 10);
+        }
+    });
     return User;
   };

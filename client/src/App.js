@@ -11,6 +11,7 @@ import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
 import Account from './pages/Account';
+// import SignUp from './pages/SignInSignUp';
 import SingInSignUp from './pages/SignInSignUp';
 import UserDashboard from './pages/UserDashboard';
 import ListingForm from './components/ListingForm';
@@ -18,13 +19,15 @@ import ListingCard from './components/ListingCard';
 // import Footer from '';
 
 import {Footer, HomePage, Menu, SubMenu} from './pages/HomePage';
+import { AuthProvider } from './context/AuthContext';
 import './App.css';
 import PersonalSafetyTips from './pages/PersonalSafetyTips';
 
 class App extends React.Component {
   render() {
     return (
-      <Router>
+      <AuthProvider>
+        <Router>
           <Menu />
           <SubMenu />
           <Switch>
@@ -46,9 +49,8 @@ class App extends React.Component {
             <Route path="/account">
               <Account />
             </Route>
-            <Route path="/login">
-              <SingInSignUp />
-            </Route>
+            <Route path="/login" component={ SingInSignUp } />
+            <Route path="/dashboard" component={ UserDashboard }/>
             <Route path="/dashboard">
               <UserDashboard />
             </Route>
@@ -67,7 +69,7 @@ class App extends React.Component {
           </ Switch>
           <Footer />
         </Router>
-
+      </AuthProvider>
     );
   }
 }

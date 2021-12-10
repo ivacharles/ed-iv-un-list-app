@@ -1,22 +1,33 @@
 const express = require('express');
-const app = express();
 const expressSession = require('express-session');
 const morgan = require('morgan');
 const passport = require('./middlewares/authentication');
 const path = require('path');
 const db = require('./models');
+var bodyParser = require( 'body-parser' );
+
+const app = express();
 const PORT = process.env.PORT;
 
 // this lets us parse 'application/json' content in http requests
 // app.use(express.bodyParser());
 app.use(express.json());
+app.use( bodyParser.urlencoded({ extended: true }) );
 // sets up the passport
 app.use(expressSession({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true}));
+  saveUninitialized: true,
+}));
+
+
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use((req, res, next) =>{
+//   console.log(req.session)
+//   console.log(req.user)
+//   next();
+// })
 
 // add http request logging to help us debug and audit app use
 const logFormat = process.env.NODE_ENV==='production' ? 'combined' : 'dev';
@@ -33,10 +44,10 @@ if(process.env.NODE_ENV==='production') {
     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
   });
 }
+
 // update DB tables based on model updates. Does not handle renaming tables/columns
 // NOTE: toggling this to true drops all tables (including data)
-db.sequelize.sync({ force: false }); // set to false after
-
+db.sequelize.sync({ force: true });
 // start up the server
 if(PORT) {
   app.listen(PORT, () => console.log(`Listening on ${PORT}`));

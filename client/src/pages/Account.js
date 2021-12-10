@@ -13,7 +13,7 @@ function AccountCreation(props) {
 function Account(props){
   const daysMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   const populateDays = () =>  {
-
+    // ill get to this later
   }
   return  (
     <div id="card">
