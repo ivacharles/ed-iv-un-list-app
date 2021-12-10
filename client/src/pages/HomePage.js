@@ -3,6 +3,9 @@ import DealsFeature from '../components/DealsFeature';
 import MainSection from '../components/MainSection';
 import SingleDropdownComponent from '../components/SingleDropdownComponent';
 import imgPlaceholder from '../images/looking_4_jobs.jpg'
+import imgsell from '../images/looking_4_sell.jpg'
+import imgTrades from '../images/looking_4_trades.jpg'
+import imghousing from '../images/housing_bubble.jpeg'
 import '../App.css';
 import AuthButton from '../components/AuthButton';
 
@@ -16,7 +19,6 @@ function HomePage(props) {
 }
 
 export { HomePage, Footer, Menu, SubMenu};
-
 
 function Menu() {
   return (
@@ -86,9 +88,9 @@ function Showcase() {
     <div className="container-md px-5">
       <div className="row d-flex justify-content-evenly py-4" >
         <MainSection img={imgPlaceholder} title="Jobs" desc="find any jobs that you want here" />
-        <MainSection img={imgPlaceholder} title="Jobs" desc="find any jobs that you want here" />
-        <MainSection img={imgPlaceholder} title="Jobs" desc="find any jobs that you want here" />
-        <MainSection img={imgPlaceholder} title="Jobs" desc="find any jobs that you want here" />
+        <MainSection img={imghousing} title="Housing" desc="find any jobs that you want here" />
+        <MainSection img={imgsell} title="For Sell" desc="find any jobs that you want here" />
+        <MainSection img={imgTrades} title="trade In" desc="find any jobs that you want here" />
       </div>
     </div>
   );
@@ -118,6 +120,7 @@ function TodaysDealSection() {
 function Footer() {
   return (
     <div className="container-fluid  bg-dark" >
+      <footer className="  py-0">
       <nav className="  py-0">
         <ul className="nav nav-pills d-flex justify-content-center">
           <li className="nav-item"><a href="/ReportUser" className="nav-link text-white" >Report User </a></li>
@@ -146,6 +149,7 @@ function Footer() {
           <li className="nav-item"><a href="#" className ="nav-link text-white">Personal Safety Tips</a></li> */}
         </ul>
       </nav>
+      </footer>
       <div className="container-fluid">
       <p class="text-muted text-center p-3 mb-3">&copy; Ed-Iv-Un - 2021</p> 
       </div>
