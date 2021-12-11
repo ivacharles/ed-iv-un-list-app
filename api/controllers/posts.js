@@ -16,6 +16,15 @@ const { Post } = db;
 // TODO: Can you spot where we have some duplication below?
 
 
+router.get('/:category', (req,res) => {
+  Post.findAll({
+    where:{
+      category: req.params.category
+    },
+    attributes:['title','zipcode','city','description'],
+  })
+    .then(posts => res.json(posts));
+});
 router.get('/', (req,res) => {
   Post.findAll({})
     .then(posts => res.json(posts));
@@ -23,8 +32,21 @@ router.get('/', (req,res) => {
 
 
 router.post('/', (req, res) => {
-  let { userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description } = req.body;
-  Post.create({ userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description })
+  const posts = {
+    userid:req.body.userid,
+    title: req.body.title,
+    city: req.body.city,
+    img:req.body.img,
+    zipcode:req.body.zipcode,
+    category:req.body.category,
+    price:req.body.price,
+    make:req.body.make,
+    modelname:req.body.modelname,
+    contact_email:req.body.contact_email,
+    description: req.body.description
+
+  };
+  Post.create(posts)
     .then(post => {
       res.status(201).json(post);
     })
@@ -47,6 +69,9 @@ router.get('/:id', (req, res) => {
 });
 
 
+
+
+
 router.put('/:id', (req, res) => {
   const { id } = req.params;
   Post.findByPk(id)
@@ -58,7 +83,7 @@ router.put('/:id', (req, res) => {
       post.userid = req.body.userid;
       post.title = req.body.title;
       post.city = req.body.city;
-      post.img = req.body.img;
+      post.img = req.file.img;
       post.zipcode = req.body.zipcode;
       post.category = req.body.category;
       post.price = req.body.price;
@@ -75,6 +100,36 @@ router.put('/:id', (req, res) => {
         });
     });
 });
+
+
+
+
+// router.put('/:category', (req, res) => {
+//   const { category} = req.params;
+//   Post.findByPk(category)
+//     .then(post => {
+//       if(!post) {
+//         return res.sendStatus(404);
+//       }
+//       //userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description=
+//       post.title = req.body.title;
+//       post.city = req.body.city;
+//       post.img = req.file.buffer;
+//       post.zipcode = req.body.zipcode;
+//       post.price = req.body.price;
+//       post.make = req.body.make;
+//       post.modelname = req.body.modelname;
+//       post.contact_email = req.body.contact_email;
+//       post.description = req.body.description;
+//       post.save()
+//         .then(post => {
+//           res.json(post);
+//         })
+//         .catch(err => {
+//           res.status(400).json(err);
+//         });
+//     });
+// });
 
 
 router.delete('/:id', (req, res) => {
