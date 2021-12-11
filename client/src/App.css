@@ -29,3 +29,10 @@
 .dropdown-toggle::after {
   content: none;
 }
+
+.footerClass {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

@@ -11,6 +11,4 @@ const Sequelize = require('sequelize');
     acquire: 30000,
     idle: 10000
   },
-
-
 });

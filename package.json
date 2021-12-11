@@ -5,20 +5,23 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "nodemon -r dotenv/config api/app.js",
+    "dev": "nodemon -r dotenv/config api/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm install && npm run build"
   },
   "author": "Edwin Samaniego, Iva Lesperance Charles, Unaiza Nizami",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "express-handlebars": "^6.0.1",
+    "express-session": "^1.17.2",
     "morgan": "^1.10.0",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "6.7.0"
+    "sequelize": "^6.7.0",
+    "express-handlebars": "^6.0.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

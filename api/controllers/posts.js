@@ -23,9 +23,8 @@ router.get('/', (req,res) => {
 
 
 router.post('/', (req, res) => {
-  let { content } = req.body;
-  
-  Post.create({ content })
+  let { userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description } = req.body;
+  Post.create({ userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description })
     .then(post => {
       res.status(201).json(post);
     })
@@ -55,8 +54,18 @@ router.put('/:id', (req, res) => {
       if(!post) {
         return res.sendStatus(404);
       }
-
-      post.content = req.body.content;
+      //userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description
+      post.userid = req.body.userid;
+      post.title = req.body.title;
+      post.city = req.body.city;
+      post.img = req.body.img;
+      post.zipcode = req.body.zipcode;
+      post.category = req.body.category;
+      post.price = req.body.price;
+      post.make = req.body.make;
+      post.modelname = req.body.modelname;
+      post.contact_email = req.body.contact_email;
+      post.description = req.body.description;
       post.save()
         .then(post => {
           res.json(post);
