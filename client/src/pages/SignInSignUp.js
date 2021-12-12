@@ -143,6 +143,7 @@ class SignUp extends React.Component {
                                 class="form-control"
                                 id="floatingInput"
                                 placeholder="name@example.com"
+                                value={this.state.contact_email}
                                 onChange={this.fieldChanged('contact_email')}
                             />
                             <label for="floatingInput">Email address</label>
@@ -163,7 +164,6 @@ class SignUp extends React.Component {
                                     name="zip"
                                     type="number"
                                     class="form-control p-3"
-                                    placeholder="Zip"
                                     value={this.state.zip}
                                     onChange={this.fieldChanged('zip')}
                                 />

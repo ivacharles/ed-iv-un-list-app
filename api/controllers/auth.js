@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../models');
 const passport = require('../middlewares/authentication');
-
-
+// this is for user authentication and user sign up / login 
 router.post('/signup', (req, res) => {
   // console.log("POST body: ", req.body);
   User.create({
@@ -45,18 +44,3 @@ router.post('/logout', (req, res) => {
 })
 
 module.exports = router;
-
-
-
-// router.post('/checkuser', (req, res) => {
-//   var a = req.body.contact_email;
-//   User.findOne({ where: {
-//     a
-//   }})
-//   .then((user) => {
-//     req.login(user, () => res.status(201).json(user));
-//   })
-//   .catch((err) => {
-//     res.status(404).json({ msg: 'No User Found Signup with: ' + a, err });
-//   });
-// })

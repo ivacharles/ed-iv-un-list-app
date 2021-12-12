@@ -25,43 +25,25 @@ import './App.css';
 import PersonalSafetyTips from './pages/PersonalSafetyTips';
 
 class App extends React.Component {
-  render() {
-    return (
-      <AuthProvider>
-        <Router>
-          <Menu />
-          <SubMenu />
-          <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route path="/posts/new">
-              <PostFormPage />
-            </Route>
-            <Route path="/posts/">
-              <ShowPostPage />
-            </Route>
-            <Route path="/About">
-              <AboutUsPage />
-            </Route>
-            <Route path="/PersonalSafety">
-              <PersonalSafetyTips />
-            </Route>
-            <Route path="/account">
-              <Account />
-            </Route>
+render() {
+  return (
+    <AuthProvider>
+      <Router>
+        <Menu />
+        <SubMenu />
+        <Switch>'
+          <Route exact path="/" component={HomePage} />
+          <Route path="/posts/new" component={PostFormPage} />
+            <Route path="/posts/" component={ShowPostPage} />
+            <Route path="/About" component={AboutUsPage} />
+            <Route path="/PersonalSafety" component={PersonalSafetyTips} />
+            <Route path="/account" component={Account} />
             <Route path="/login" component={ SingInSignUp } />
             <Route path="/dashboard" component={ UserDashboard }/>
-            <Route path="/create-listing">
-              <ListingForm />
-            </Route>
-            <Route path="/posting-card">
-              <ListingCard />
-            </Route>
+            <Route path="/create-listing" component={ListingForm}/>
+            <Route path="/posting-card" component={ListingCard} />
             {/* Format : 
-              <Route path="/PlaceItLinksTo">
-                <React Function />
-              </Route>
+              <Route path="/PlaceItLinksTo" component={PAGE / FUNCTION / CLASS} />
             */}
           </ Switch>
           <Footer />
