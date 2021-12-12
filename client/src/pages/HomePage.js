@@ -9,6 +9,7 @@ import imghousing from '../images/housing_bubble.jpeg'
 import '../App.css';
 import AuthButton from '../components/AuthButton';
 
+
 function HomePage(props) {
   return (
     <div className="container-fluid">
@@ -50,7 +51,7 @@ function Menu() {
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  English
+                  english
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a className="dropdown-item" href="#">Francais</a></li>
@@ -72,11 +73,11 @@ function SubMenu() {
     <div className="container-fluid sub-menu-bock  bg-dark" >
       <nav className="d-flex justify-content-center">
         <ul className="nav nav-pills" id="bvnodslcmal" >
-          <SingleDropdownComponent title="For Sales" desc="" />
-          <SingleDropdownComponent title="Trade in" desc="" />
-          <SingleDropdownComponent title="Jobs" desc="" />
-          <SingleDropdownComponent title="Housing" desc="" />
-          <SingleDropdownComponent title="Forums" desc="" />
+          <SingleDropdownComponent title="For Sales" desc={0} />
+          {/* <SingleDropdownComponent title="Trade in" desc={1} />
+          <SingleDropdownComponent title="Jobs" desc={2} />
+          <SingleDropdownComponent title="Housing" desc={3} />
+          <SingleDropdownComponent title="Forums" desc={4} /> */}
         </ul>
       </nav>
     </div>
@@ -100,7 +101,7 @@ function Showcase() {
 function TodaysDealSection() {
   return (
     <div className="container px-4 py-5" id="icon-grid">
-      <h2 className="pb-2 border-bottom">Today's Deals -All from safe sellers</h2>
+      <h2 className="pb-2 border-bottom">Today's Latest Posts -All from safe sellers</h2>
 
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
         <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />

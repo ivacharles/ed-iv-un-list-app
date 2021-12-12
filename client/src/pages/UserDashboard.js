@@ -20,7 +20,7 @@ function UserDashboard(props) {
               </li>
               <li className="nav-item">
                   <a
-                    className="nav-link" href="#">
+                    className="nav-link" href="/create-listing">
                   <span data-feather="file"></span>
                   <GrNotes /> Postings
                   </a>
