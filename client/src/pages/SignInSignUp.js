@@ -56,7 +56,6 @@ class SignUp extends React.Component {
         this.setState({ failed: true });
       });
     }
-
     render() {
         const { from } = this.props.location.state || { from: { pathname: '/' } };
         const { redirectToReferrer, failed } = this.state;
@@ -71,11 +70,18 @@ class SignUp extends React.Component {
         return(
             <div className="p-5 row justify-content-center ">
                 <div className="col-xs-4 col-sm-12 col-lg-4 col-md-8 p-5 ">
+                    <h1 class="h3 mb-0 fw-normal">Sign in</h1>
+                    {/* <GoogleLogin
+                        class="w-100 btn btn-lg btn-dark my-3"
+                        clientId='899325025241-3lj3fjqaia7g1rfl9g2k2ap49sr1pvk7.apps.googleusercontent.com'
+                        buttonText="Sign in with Google"
+                        onSuccess={onSuccess}
+                        onFailure={onFailure}
+                        cookiePolicy={'single_host_origin'}>
+                    </GoogleLogin> */}
+                    <button class="w-100 btn btn-lg btn-dark" type="submit"><FaFacebookF /> Signin with Facebook </button>
                 <form onSubmit={this.login}>
-                    <h1 class="h3 mb-0 fw-normal"> Sign in</h1>
-                <button class="w-100 btn btn-lg btn-dark my-3" type="submit"><BsGoogle /> Sign in with Google </button>
-                <button class="w-100 btn btn-lg btn-dark" type="submit"><FaFacebookF /> Signin with Facebook </button>
-                <div class="form-floating my-4">
+                 <div class="form-floating my-4">
                 <input
                     name="contact_email" 
                     type="email" 
