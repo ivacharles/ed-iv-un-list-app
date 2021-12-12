@@ -20,7 +20,7 @@ passport.use(
     passwordField: 'password'
   },
   function(contact_email, password, done) {
-    console.log("email", contact_email, "password", password);
+    // console.log("email", contact_email, "password", password); // for testing purposes
     User.findOne({ where: {contact_email}})
     .then((user) => {
         // if there is not user
@@ -38,7 +38,7 @@ passport.use(
     .catch(error => {
         return done(error);
     });
-}
+  }
 ));
 
 passport.serializeUser((user, done) => {
