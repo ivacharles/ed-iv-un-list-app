@@ -7,14 +7,11 @@ const AuthButton = withRouter(({ history }) => {
   if(!auth.isAuthenticated) {
     return <Link className="nav-link text-nowrap text-white" to="/login">log in</Link>;
   }
-  const logout = () => {
-    auth.signout().then(() => history.push('/'));
+  else{
+    return (
+      <Link className="nav-link text-nowrap text-white" to="/dashboard">Account</Link>
+      );
   }
-  return (
-    <div className="text-white">
-      <Link className="nav-link text-nowrap text-white" onClick={logout}>log out</Link>
-    </div>
-  );
 });
 
 export default AuthButton;

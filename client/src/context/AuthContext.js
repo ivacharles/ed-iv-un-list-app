@@ -47,7 +47,6 @@ const AuthProvider = ({ children }) => {
       if(!response.ok) {
         throw new Error('Sign Up Failed');
       }
-      console.log("\n\n\n\n\n\n\n\n\n " + response)
       return response.json();
     })
     .then((body) => {
@@ -55,7 +54,6 @@ const AuthProvider = ({ children }) => {
       return body;
     });
   }
-
   const signout = () => {
     return fetch('/api/auth/logout', {
       method: 'POST',
@@ -72,10 +70,27 @@ const AuthProvider = ({ children }) => {
       return body;
     });
   }
+  // userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description
+  const createPost = (userid, title, city, img, zipcode, category, price, make, modelname, contact_email, description) => {
+    return fetch('/api/posts/', {
+      method: 'POST',
+      body: JSON.stringify({userid, title, city, img, zipcode, category, price, make, modelname, contact_email, description}),
+      headers: {
+        'content-type': 'application/json',
+      }
+    })
+    .then((response) =>{
+      if(!response.ok){
+        throw new Error("Failed to create a listing.")
+      }
+      return response.json();
+    })
+  }
 
   return (
     <Provider
       value={{
+        createPost,
         signup,
         authenticate,
         signout,

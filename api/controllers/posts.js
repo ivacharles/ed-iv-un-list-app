@@ -15,7 +15,6 @@ const { Post } = db;
 // explore other patterns to reduce code duplication.
 // TODO: Can you spot where we have some duplication below?
 
-
 router.get('/', (req,res) => {
   Post.findAll({})
     .then(posts => res.json(posts));
@@ -23,8 +22,8 @@ router.get('/', (req,res) => {
 
 
 router.post('/', (req, res) => {
-  let { userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description } = req.body;
-  Post.create({ userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description })
+  let {userid , title, city, img, zipcode, category, price, make, modelname, contact_email, description } = req.body;
+  Post.create({userid , title, city, img, zipcode, category, price, make, modelname, contact_email, description })
     .then(post => {
       res.status(201).json(post);
     })
