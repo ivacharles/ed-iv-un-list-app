@@ -5,6 +5,9 @@ import SingleDropdownComponent from '../components/SingleDropdownComponent';
 import imgPlaceholder from '../images/looking_4_jobs.jpg'
 import imgsell from '../images/looking_4_sell.jpg'
 import imgTrades from '../images/looking_4_trades.jpg'
+import airMax from '../images/air-max-1.png';
+import phone1 from '../images/phone-1.jfif';
+import phone2 from '../images/phone-2.jfif';
 import imghousing from '../images/housing_bubble.jpeg'
 import '../App.css';
 import AuthButton from '../components/AuthButton';
@@ -100,17 +103,17 @@ function Showcase() {
 function TodaysDealSection() {
   return (
     <div className="container px-4 py-5" id="icon-grid">
-      <h2 className="pb-2 border-bottom">Today's Deals -All from safe sellers</h2>
+      <h2 className="pb-2 border-bottom">Today's Latest Posts -All from safe sellers</h2>
 
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-        <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
-        <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
-        <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
-        <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
-        <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
-        <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
-        <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
-        <DealsFeature title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
+        <DealsFeature img={airMax} title="Nike Air Max 97" desc="Featuring the original ripple design inspired by Japanese bullet trains." />
+        <DealsFeature img={phone1} title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
+        <DealsFeature img={phone2} title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
+        <DealsFeature img={airMax} title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
+        <DealsFeature img={phone1} title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
+        <DealsFeature img={phone2} title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
+        <DealsFeature img={airMax} title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
+        <DealsFeature img={airMax} title="Featured title" desc="Paragraph of text beneath the heading to explain the heading." />
       </div>
     </div>
   );
