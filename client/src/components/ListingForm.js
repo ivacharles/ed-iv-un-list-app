@@ -12,7 +12,7 @@ class ListingForm extends React.Component {
         title: "",
         price: 0,
         city: "",
-        img: "",
+        // img: "",
         zipcode: 0,
         make: "",
         modelname: "",
@@ -54,9 +54,9 @@ class ListingForm extends React.Component {
             modelname,
             description
         } = this.state;
-        // this should work ?\
+        // this should work ?
         // userid,title,city,img,zipcode,category,price,make,modelname, contact_email, description
-        auth.createPost(auth.user.userid, title, city, "testing", zipcode, category, price, make, modelname, auth.user.contact_email, description)
+        auth.createPost(auth.user.userid, title, city, null, zipcode, category, price, make, modelname, auth.user.contact_email, description)
         .then((success) => {
           this.setState({ redirectToReferrer: true });
         })
